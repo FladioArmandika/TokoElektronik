@@ -16,9 +16,9 @@
                       </span>
                   </div>
                 </div>
-                <div class="col-md-8">
+                <!-- <div class="col-md-8">
                   <a href="{{ route('admin.produk.add.view') }}" type="button" name="button" class="btn btn-info pull-right">TAMBAH PRODUK</a>
-                </div>
+                </div> -->
               </div>
 
               <div class="row">
@@ -33,9 +33,9 @@
                     <thead>
                       <th>NO</th>
                     	<th>NAMA</th>
-                    	<th>KATEGORI</th>
-                    	<th>STOK</th>
-                    	<th>HARGA</th>
+                    	<th>L/P</th>
+                    	<th>KOTA</th>
+                    	<th>GABUNG</th>
                       <th>ACTION</th>
                     </thead>
                     <tbody>
@@ -44,11 +44,11 @@
                           <tr>
                             <td>{{ $i }}</td>
                           	<td>{{ $user->name }}</td>
-                          	<td>{{ $user->kategori->nama }}</td>
-                          	<td>{{ $user->stok }}</td>
-                          	<td>{{ $user->harga }}</td>
+                          	<td>{{ $user->jenis_kelamin }}</td>
+                          	<td>{{ $user->kota }}</td>
+                          	<td>{{ $user->tgl_gabung }}</td>
                             <td>
-                              <a href="{{ route('admin.produk.view', ['idProduk' => $produk->produk_id] )}}" class="btn btn-info"><i class="ti-more"></i></a>
+                              <a href="{{ route('admin.customer.view', ['idCustomer' => $user->id] )}}" class="btn btn-info"><i class="ti-more"></i></a>
                               <a class="btn btn-danger"><i class="ti-trash"></i></a>
                             </td>
                           </tr>

@@ -79,7 +79,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Deskripsi</label>
-                    <textarea name="Deskripsi" rows="10"class="form-control border-input">{{ $produk->detail->deskripsi }}
+                    <textarea name="Deskripsi" rows="10"class="form-control border-input">{{ $produk->deskripsi }}
                     </textarea>
                   </div>
                 </div>

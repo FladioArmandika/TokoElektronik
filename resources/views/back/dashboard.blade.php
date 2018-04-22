@@ -9,13 +9,13 @@
                     <div class="row">
                         <div class="col-xs-5">
                             <div class="icon-big icon-warning text-center">
-                                <i class="ti-server"></i>
+                                <i class="ti-user"></i>
                             </div>
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Capacity</p>
-                                105GB
+                                <p>Customer</p>
+                                190
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Revenue</p>
+                                <p>Pendapatan</p>
                                 $1,345
                             </div>
                         </div>
@@ -59,12 +59,12 @@
                     <div class="row">
                         <div class="col-xs-5">
                             <div class="icon-big icon-danger text-center">
-                                <i class="ti-pulse"></i>
+                                <i class="ti-package"></i>
                             </div>
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Errors</p>
+                                <p>Produk</p>
                                 23
                             </div>
                         </div>
@@ -84,12 +84,12 @@
                     <div class="row">
                         <div class="col-xs-5">
                             <div class="icon-big icon-info text-center">
-                                <i class="ti-twitter-alt"></i>
+                                <i class="ti-truck"></i>
                             </div>
                         </div>
                         <div class="col-xs-7">
                             <div class="numbers">
-                                <p>Followers</p>
+                                <p>Transaksi  </p>
                                 +45
                             </div>
                         </div>

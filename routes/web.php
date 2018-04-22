@@ -32,12 +32,14 @@ Route::group(['prefix' => 'admin'], function() {
   Route::group(['prefix' => 'produk'], function() {
     Route::get('/', 'AdminController@getProdukPage')->name('admin.produk');
     Route::get('/tambah', 'Back\ProdukController@getAddProductPage')->name('admin.produk.add.view');
+    Route::post('/tambah', 'Back\ProdukController@addProduct')->name('admin.produk.add');
     Route::get('/{idProduk}', 'Back\ProdukController@getProductViewPage')->name('admin.produk.view');
   });
 
   //Transaksi
   Route::group(['prefix' => 'transaksi'], function() {
     Route::get('/', 'AdminController@getTransaksiPage')->name('admin.transaksi');
+    Route::get('/{idTransaksi}', 'Back\TransaksiController@getTransaksiViewPage')->name('admin.transaksi.view');
   });
 
   //Keuangan
@@ -48,6 +50,7 @@ Route::group(['prefix' => 'admin'], function() {
   //Customer
   Route::group(['prefix' => 'customer'], function() {
     Route::get('/', 'AdminController@getCustomerPage')->name('admin.customer');
+    Route::get('/{idCustomer}', 'Back\CustomerController@getCustomerViewPage')->name('admin.customer.view');
   });
 
 });

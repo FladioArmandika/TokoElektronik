@@ -27,7 +27,6 @@ class AdminController extends Controller {
     }
 
     public function getProdukPage() {
-      // $listProduk = DB::table('produk')->get();
       $kategoriName = \App\Model\KategoriSub::all()->pluck('nama')->toArray();
       $listProduk = \App\Model\Produk::all();
       $kategori = \App\Model\KategoriSub::all();
@@ -39,7 +38,23 @@ class AdminController extends Controller {
     }
 
     public function getTransaksiPage() {
-      return view('back.transaksi');
+      $listTransaksi = \App\Model\Transaksi::all();
+
+      $listTransaksiBayar = \App\Model\Transaksi::whereNull('tgl_bayar')
+        ->orderBy('tanggal')
+        ->get();
+      $listTransaksiKirim = \App\Model\Transaksi::whereNull('tgl_kirim')
+        ->whereNotNull('tgl_bayar')
+        ->orderBy('tgl_bayar')
+        ->get();
+
+
+
+      return view('back.transaksi', [
+        'listTransaksi' => $listTransaksi,
+        'listTransaksiBayar' => $listTransaksiBayar,
+        'listTransaksiKirim' => $listTransaksiKirim,
+      ]);
     }
 
     public function getKeuanganPage() {

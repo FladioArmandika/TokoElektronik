@@ -33,8 +33,18 @@ class ProdukController extends Controller {
       return view('back.produk_add', ['listKategori' => $listKategori]);
     }
 
-    public function addProduct(Request $produk) {
+    public function addProduct(Request $request) {
+      $produk = new \App\Model\Produk;
+      $produk->produk_id = rand(20000000,29999999);
+      $produk->nama_produk = $request['nama_produk'];
+      $produk->kategori_id = $request['kategori_id'];
+      $produk->berat = $request['berat'];
+      $produk->harga = $request['harga'];
+      $produk->stok = $request['stok'];
+      $produk->deskripsi = $request['deskripsi'];
+      $produk->save();
 
+      return redirect()->route('admin.produk');
     }
 
     public function removeProduct($idProduk) {

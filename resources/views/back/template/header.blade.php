@@ -146,6 +146,10 @@
 </div>
 
 
+<!-- MODAL -->
+
+
+
 </body>
 
   <!--   Core JS Files   -->
@@ -165,6 +169,9 @@
   <!--  Notifications Plugin    -->
   <!-- <script src="assets/js/bootstrap-notify.js"></script> -->
   <script src="{{ URL::asset('js/back/bootstrap-notify.js') }}"></script>
+
+	<!-- Chart.js -->
+	<script src="{{ URL::asset('js/back/Chart.bundle.js') }}"></script>
 
   <!--  Google Maps Plugin    -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>

@@ -20,6 +20,11 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('front.home');
+
+      $listKategori = \App\Model\Kategori::orderBy('nama')->get();
+
+      return view('front.home', [
+        'listKategori' => $listKategori,
+      ]);
     }
 }

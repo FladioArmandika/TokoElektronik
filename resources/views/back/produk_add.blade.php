@@ -28,7 +28,8 @@
               <h4 class="title">Ubah Produk</h4>
           </div> -->
           <div class="content">
-            <form class="" action="index.html" method="post">
+            <form class="" action="{{ route('admin.produk.add') }}" method="post">
+              {{ csrf_field() }}
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -41,9 +42,9 @@
                 <div class="col-md-5">
                   <div class="form-group">
                     <label>Kategori</label>
-                    <select class="form-control border-input" name="produk_kategori_sub">
+                    <select class="form-control border-input" name="kategori_id">
                       @foreach($listKategori as $kategori)
-                        <option value="[object Object]">{{ $kategori->nama }}</option>
+                        <option value="{{ $kategori->produk_kategori_sub_id }}">{{ $kategori->nama }}</option>
                       @endforeach
                     </select>
                   </div>
@@ -54,7 +55,7 @@
                   <div class="form-group">
                     <label>Berat</label>
                     <div class="input-group border-input">
-                      <input type="number" name="" class="form-control border-input" aria-describedby="kg-tag" style="text-align:right;">
+                      <input type="number" name="berat" class="form-control border-input" aria-describedby="kg-tag" style="text-align:right;">
                       <span class="input-group-addon" id="kg-tag">Kg</span>
                     </div>
                   </div>
@@ -64,14 +65,14 @@
                     <label>Harga</label>
                     <div class="input-group border-input">
                       <span class="input-group-addon" id="rupiah-tag">Rp.</span>
-                      <input type="number" name=""class="form-control border-input" aria-describedby="rupiah-tag" style="text-align:right;">
+                      <input type="number" name="harga" class="form-control border-input" aria-describedby="rupiah-tag" style="text-align:right;">
                     </div>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label>Stok</label>
-                    <input type="number" name="" class="form-control border-input" style="text-align:right;">
+                    <input type="number" name="stok" class="form-control border-input" style="text-align:right;">
                   </div>
                 </div>
               </div>
@@ -79,7 +80,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Deskripsi</label>
-                    <textarea name="Deskripsi" rows="10"class="form-control border-input"></textarea>
+                    <textarea name="deskripsi" rows="10"class="form-control border-input"></textarea>
                   </div>
                 </div>
               </div>
@@ -90,7 +91,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <button type="button" name="button" class="btn btn-info pull-right" ><i class="ti-plus"></i> TAMBAH</button>
+                  <button type="submit" name="button" class="btn btn-info pull-right" ><i class="ti-plus"></i> TAMBAH</button>
                 </div>
               </div>
             </form>
