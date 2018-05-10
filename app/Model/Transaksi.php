@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaksi extends Model {
 
+    public $timestamps = false;
+
     protected $table = 'transaksi';
     protected $primaryKey = 'transaksi_id';
 
@@ -23,7 +25,7 @@ class Transaksi extends Model {
     }
 
     public function produk() {
-      return $this->hasMany('App\Model\TransaksiAlamat','transaksi_id');
+      return $this->hasMany('App\Model\TransaksiProduk','transaksi_id');
     }
 
     public function keuangan_harian() {

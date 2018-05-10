@@ -56,8 +56,8 @@
                               <i class="ti-wallet"></i>&ensp;&ensp;{{ $transaksiKirim->harga_total }} <br>
                             </td>
                             <td>
-                              <button data-toggle="modal" data-target="#inputResi" name="button" class="btn btn-info">INPUT RESI</button>
-                              <a href="{{ route('admin.transaksi.view', ['idTransaksi' => $transaksiKirim->transaksi_id] )}}" class="btn btn-info"><i class="ti-more"></i></a>
+                              <button data-toggle="modal" data-target="#inputResi" name="button" class="btn btn-info btn-sm">INPUT RESI</button>
+                              <a href="{{ route('admin.transaksi.view', ['idTransaksi' => $transaksiKirim->transaksi_id] )}}" class="btn btn-info btn-sm">DETAIL</a>
                               <!-- <a class="btn btn-danger"><i class="ti-trash"></i></a> -->
                             </td>
                           </tr>
@@ -106,7 +106,7 @@
                               </a>
                             </td>
                             <td>
-                              <a href="{{ route('admin.transaksi.view', ['idTransaksi' => $transaksiBayar->transaksi_id] )}}" class="btn btn-info"><i class="ti-more"></i></a>
+                              <a href="{{ route('admin.transaksi.view', ['idTransaksi' => $transaksiBayar->transaksi_id] )}}" class="btn btn-info btn-sm">detail</a>
                               <!-- <a class="btn btn-danger"><i class="ti-trash"></i></a> -->
                             </td>
                           </tr>
@@ -134,7 +134,7 @@
         <h4 class="modal-title" id="myModalLabel">Input Resi</h4>
       </div>
       <div class="modal-body">
-        
+
         <form class="" action="index.html" method="post">
           <div class="form-group">
             <input type="text" name="no_resi" value="" class="form-control border-input" placeholder="Masukan Resi">

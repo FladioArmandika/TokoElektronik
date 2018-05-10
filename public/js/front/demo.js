@@ -1,3 +1,31 @@
+
+$(document).ready(function(){
+  $('#submitAlamat').hide();
+});
+
+$('#btEditAlamat').click(function(){
+  $('#taAlamat').removeProp("disabled");
+  $('#taAlamat').focus();
+
+  $('#btEditAlamat').hide();
+  $('#submitAlamat').show();
+});
+
+$('#submitAlamat').click(function() {
+  $('#taAlamat').prop('disabled',true);
+
+
+  $('#submitAlamat').hide();
+  $('#btEditAlamat').show();
+});
+
+
+
+
+//
+//
+//
+
 type = ['','info','success','warning','danger'];
 
 

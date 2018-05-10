@@ -55,8 +55,8 @@
                           	<td>{{ $produk->stok }}</td>
                           	<td>{{ $produk->harga }}</td>
                             <td>
-                              <a href="{{ route('admin.produk.view', ['idProduk' => $produk->produk_id] )}}" class="btn btn-info"><i class="ti-more"></i></a>
-                              <a class="btn btn-danger"><i class="ti-trash"></i></a>
+                              <a href="{{ route('admin.produk.view', ['idProduk' => $produk->produk_id] )}}" class="btn btn-info btn-sm"><i class="ti-more"></i>&emsp;DETAIL</a>
+                              <a class="btn btn-danger btn-sm"><i class="ti-trash"></i>&emsp;HAPUS</a>
                             </td>
                           </tr>
                           @php ($i = $i + 1)

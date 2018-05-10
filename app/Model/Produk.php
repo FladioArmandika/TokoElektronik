@@ -14,7 +14,6 @@ class Produk extends Model {
     'harga','stok','deskripsi'
   ];
 
-
   public function kategori() {
     return $this->belongsTo('App\Model\KategoriSub','kategori_id');
   }

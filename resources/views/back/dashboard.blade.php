@@ -4,31 +4,34 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-3 col-sm-6">
-            <div class="card">
-                <div class="content">
-                    <div class="row">
-                        <div class="col-xs-5">
-                            <div class="icon-big icon-warning text-center">
-                                <i class="ti-user"></i>
-                            </div>
-                        </div>
-                        <div class="col-xs-7">
-                            <div class="numbers">
-                                <p>Customer</p>
-                                190
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer">
-                        <hr />
-                        <div class="stats">
-                            <i class="ti-reload"></i> Updated now
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <a href="{{ route('admin.customer') }}">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-warning text-center">
+                                  <i class="ti-user"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Customer</p>
+                                  190
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> Updated now
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </a>
         </div>
         <div class="col-lg-3 col-sm-6">
+          <a href="#"></a>
             <div class="card">
                 <div class="content">
                     <div class="row">

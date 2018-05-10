@@ -27,4 +27,14 @@ class HomeController extends Controller {
         'listKategori' => $listKategori,
       ]);
     }
+
+    public function getHomePage() {
+      $listKategori = \App\Model\Kategori::orderBy('nama')->get();
+
+      return view('front.home', [
+        'listKategori' => $listKategori,
+      ]);
+    }
+
+
 }

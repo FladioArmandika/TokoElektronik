@@ -11,16 +11,46 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/','Front\PageController@getHomePage')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/logout','Auth\LoginController@logoutUser')->name('user.logout');
 
-// BACK OFFICE
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+/////////////////////// FRONT OFFICE ////////////////////////////
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+Route::group(['prefix' => 'produk'], function() {
+  Route::get('/', 'Front\ProdukController@getProdukPage')->name('customer.produk');
+  Route::get('/{idProduk}', 'Front\ProdukController@getProdukViewPage')->name('customer.produk.view');
+  Route::get('/k/{idKategori}', 'Front\ProdukController@getProdukByCategory')->name('customer.produk.bycategory');
+});
+
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
+  Route::get('/{idCustomer}/p', 'Front\CustomerController@getProfilePage')->name('customer.profile');
+  Route::get('/add-to-cart/{idProduk}', 'Front\CustomerController@addToCart')->name('customer.produk.addtocart');
+  Route::get('/cart', 'Front\CustomerController@getCartPage')->name('customer.cart');
+  Route::post('/checkout', 'Front\CustomerController@checkout')->name('customer.checkout');
+
+});
+
+
+
+Route::get('/tentang', 'Front\PageController@getAboutUsPage')->name('customer.tentang');
+Route::get('/kontak', 'Front\PageController@getKontakPage')->name('customer.kontak');
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+/////////////////////// BACK OFFICE ////////////////////////////
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'admin'], function() {
   Route::get('/login','AuthAdmin\LoginController@showLoginForm')->name('admin.login');
   Route::post('/login','AuthAdmin\LoginController@login')->name('admin.login.submit');
